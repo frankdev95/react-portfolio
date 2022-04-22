@@ -1,0 +1,25 @@
+$multiple: 8;
+$max: 12;
+
+@for $i from 1 through $max {
+  .u-margin-top-#{$i * $multiple} {
+    @include toRem(margin-top, $i * $multiple);
+  }
+
+  .u-margin-bottom-#{$i * $multiple} {
+    @include toRem(margin-bottom, $i * $multiple);
+  }
+
+  .u-margin-left-#{$i * $multiple} {
+    @include toRem(margin-left, $i * $multiple);
+  }
+
+  .u-margin-right-#{$i * $multiple} {
+    @include toRem(margin-right, $i * $multiple);
+  }
+
+  .u-margin-vertical-#{$i * $multiple} {
+    @include toRem(margin-top, $i * $multiple);
+    @include toRem(margin-bottom, $i * $multiple);
+  }
+}

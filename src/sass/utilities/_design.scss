@@ -1,0 +1,54 @@
+@import "../../sass/abstracts/variables";
+
+.u-clr-white {
+  color: white;
+}
+
+.u-clr-emeral {
+  color: $emeral;
+}
+
+.u-clr-grey-light {
+  color: #dfdfde;
+}
+
+.u-clr-grey-light-2 {
+  color: #f7f7f7;
+}
+
+.u-bg-gunmetal {
+  background-color: $gunmetal;
+}
+
+.u-bg-gunmetal-dark {
+  background-color: $gunmetal-dark;
+}
+
+.u-clr-dark {
+  color: #203239;
+}
+
+.u-bg-white {
+  background-color: white;
+}
+
+.u-list {
+  list-style: none;
+}
+
+.u-link-unstyled {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.u-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.u-img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

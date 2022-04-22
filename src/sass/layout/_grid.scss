@@ -1,0 +1,43 @@
+$columns: 12;
+$gutter: 100;
+
+.u-grid {
+  display: grid;
+}
+
+.u-grid.col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.u-grid.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.o-row {
+  display: flex;
+  margin-right: rem-calc(calc($gutter/2)) * -1;
+  margin-left: rem-calc(calc($gutter/2)) * -1;
+  flex-wrap: wrap;
+
+  &__column {
+    width: calc(100% - rem-calc($gutter/2));
+    flex: 0 0 auto;
+    margin-left: rem-calc(calc($gutter/2));
+    margin-right: rem-calc(calc($gutter/2));
+  }
+
+  @for $i from 1 through $columns {
+    &__column--span-#{$i} {
+      width: calc(#{calc($i/$columns * 100) + "%"} - #{rem-calc($gutter)});
+    }
+  }
+  @each $size, $width in $breakpoints {
+    @include media("<#{$size}") {
+      @for $i from 1 through $columns {
+        &__column--span-#{$i}\@#{$size} {
+          width: calc(#{calc($i/$columns * 100) + "%"} - #{rem-calc($gutter)});
+        }
+      }
+    }
+  }
+}

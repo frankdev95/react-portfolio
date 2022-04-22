@@ -1,0 +1,147 @@
+@import "../../../sass/abstracts/variables";
+
+.portitem {
+  --scrollbar-width: 5px;
+  border-radius: 2px;
+  border: 1px solid #ebd8c3;
+  color: $gunmetal;
+  background-color: rgba(white, 0.95);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 100%;
+
+  &__banner {
+    cursor: pointer;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      background-color: rgba($gunmetal, 0.3);
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-in;
+    }
+
+    &.active {
+      &::after {
+        opacity: 0;
+      }
+
+      .portitem__name {
+        transform: translateX(-100%);
+      }
+
+      .portitem__scroll {
+        transform: translateX(0);
+      }
+    }
+
+    &-inner {
+      height: 100%;
+      overflow-y: scroll;
+      position: relative;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $gunmetal;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $emeral;
+      }
+    }
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__name {
+    background-color: rgba($gunmetal, 0.9);
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    padding: 2rem 5rem 2rem 2rem;
+    transition: transform 0.2s ease-in;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    padding: 8rem 3rem 3rem;
+    flex-grow: 1;
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      margin-top: auto;
+    }
+  }
+
+  &__stack {
+    background-color: #ebd8c3;
+    position: absolute;
+    padding: 0.5rem 1.5rem;
+    left: 0;
+    top: 1.5rem;
+
+    img {
+      object-fit: contain;
+      width: 3rem;
+    }
+  }
+
+  &__scroll {
+    background-color: rgba($gunmetal, 0.9);
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    right: var(--scrollbar-width);
+    top: 2rem;
+    z-index: 1;
+    transform: translateX(calc(100% + var(--scrollbar-width)));
+    transition: transform 0.2s ease-in;
+    overflow: hidden;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: left 0.2s ease-in;
+
+      &.portitem__scroll-cancel {
+        width: 1.25rem;
+        left: calc(50% + 30px);
+
+        &.active {
+          left: 50%;
+        }
+      }
+
+      &.portitem__scroll-init {
+        width: 1.75rem;
+        height: 1.75rem;
+
+        &.active {
+          left: calc(50% - 30px);
+        }
+      }
+    }
+  }
+}

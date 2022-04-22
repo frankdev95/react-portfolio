@@ -1,0 +1,32 @@
+@import "../../sass/abstracts/variables";
+@import "../../sass/abstracts/mixins";
+
+.hero {
+  background: $gunmetal;
+  height: calc(100vh - #{$header-height});
+  position: relative;
+
+  &__container {
+    height: 100%;
+  }
+
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__sentence {
+    span {
+      font-size: 9.44vw;
+      font-weight: 700;
+      color: $emeral;
+
+      @include media("screen", "<lg-phone") {
+        font-size: 9vw;
+      }
+    }
+  }
+}

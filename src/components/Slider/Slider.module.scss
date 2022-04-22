@@ -1,0 +1,29 @@
+.slider {
+  height: max(40vw, 70rem);
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  &__arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &.right {
+      right: 0;
+      transform: scaleX(-1);
+    }
+  }
+}

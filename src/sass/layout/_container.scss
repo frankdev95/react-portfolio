@@ -1,0 +1,13 @@
+@import "../../sass/abstracts/variables";
+
+.container {
+  padding: 0 $container-margin;
+}
+
+.section--padding {
+  padding: $section-padding 0;
+}
+
+.section--margin {
+  margin: $section-margin 0;
+}

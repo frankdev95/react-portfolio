@@ -1,0 +1,19 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass//abstracts/animations";
+
+.display {
+  background-color: $gunmetal;
+  border-radius: 10px;
+  bottom: 2rem;
+  color: white;
+  height: 10rem;
+  left: calc(2rem + #{$bubble-size + 2rem});
+  padding: 1rem 2rem;
+  position: fixed;
+  transform-origin: left top;
+
+  &__active {
+    -webkit-animation: fade-in 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: fade-in 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+}

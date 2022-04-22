@@ -1,0 +1,25 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.modal {
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @include media("screen", ">56.25em") {
+      display: none;
+    }
+  }
+
+  &__backdrop {
+    background-color: rgba($gunmetal, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

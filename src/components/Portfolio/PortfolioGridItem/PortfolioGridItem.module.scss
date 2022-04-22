@@ -1,0 +1,48 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/mixins";
+
+.portitem {
+  &__banner {
+    height: 37vw;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include media("screen", "<lg-tablet") {
+      height: 50vw;
+    }
+  }
+
+  &:nth-of-type(3n) {
+    grid-column: span 2;
+
+    .portitem__banner {
+      height: auto;
+    }
+    img {
+      object-fit: contain;
+    }
+
+    @include media("screen", "<lg-tablet") {
+      grid-column: span 1;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    h3 {
+      border-bottom: 3px solid $emeral;
+      background-color: rgba($gunmetal, 0.9);
+      clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
+      color: white;
+      max-width: max-content;
+      padding: 1rem 4rem 1rem 1rem;
+    }
+
+    button {
+      margin-top: auto;
+    }
+  }
+}

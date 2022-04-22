@@ -1,0 +1,40 @@
+@import "../../../sass/abstracts/variables";
+@import "../../../sass/abstracts/animations";
+
+.tooltip {
+  animation: fade-in 0.2s ease-in;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-140%);
+  border-radius: 5px;
+
+  &.light {
+    background-color: #4d5661;
+    border: 1px solid $emeral;
+  }
+
+  &__inner {
+    --pointer-size: 1.25rem;
+    padding: 0.5rem 1rem;
+
+    &::after {
+      content: "";
+      background-color: #4d5661;
+      border-bottom: 1px solid $emeral;
+      border-right: 1px solid $emeral;
+      display: block;
+      position: absolute;
+      bottom: calc(var(--pointer-size) / 2 * -1);
+      left: calc(50% - var(--pointer-size) / 2);
+      width: var(--pointer-size);
+      height: var(--pointer-size);
+      transform: rotate(45deg);
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+}

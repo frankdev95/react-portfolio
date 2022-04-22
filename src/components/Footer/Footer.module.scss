@@ -1,0 +1,51 @@
+@import "../../sass/abstracts/variables";
+
+.footer {
+  --scrolltop-size: 5rem;
+  --footer-padding: 4rem;
+  padding: calc(var(--scrolltop-size) / 2 + var(--footer-padding)) 0
+    var(--footer-padding) 0;
+  position: relative;
+  top: -1px;
+
+  &__scrolltop {
+    border-radius: 2px;
+    background-color: $emeral;
+    cursor: pointer;
+    width: var(--scrolltop-size);
+    height: var(--scrolltop-size);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+
+    &:hover {
+      svg {
+        &:first-child {
+          top: 35%;
+        }
+
+        &:last-child {
+          top: 65%;
+        }
+      }
+    }
+
+    svg {
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: top 0.2s cubic-bezier(0.25, 0.14, 0.45, 1.55);
+
+      &:first-child {
+        top: 40%;
+      }
+
+      &:last-child {
+        top: 60%;
+      }
+    }
+  }
+}

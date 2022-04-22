@@ -1,0 +1,89 @@
+@import "../../sass/abstracts/variables";
+
+.header {
+  background-color: $gunmetal;
+  border-bottom: 4px solid $emeral;
+  box-shadow: 0 2px 7px -2px black;
+  height: $header-height;
+  z-index: 1;
+
+  &.sticky {
+    animation: slideDownHeader 0.2s ease-in both;
+    position: fixed;
+    width: 100%;
+    top: calc($header-height * -1);
+    left: 0;
+  }
+}
+
+.nav {
+  margin-left: auto;
+  &__list {
+    width: max-content;
+  }
+
+  &__item {
+    font-size: 2rem;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 2.4rem;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &::after {
+      background-color: $emeral;
+      bottom: -5px;
+      height: 4px;
+      width: 0;
+      transition: width 0.2s;
+      transform: skewX(-40deg);
+    }
+
+    &::before {
+      background-color: transparent;
+      border: 1px solid white;
+      outline: 1px solid $emeral;
+      outline-offset: 1px;
+      border-radius: 50%;
+      width: 6px;
+      height: 6px;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: opacity 0.2s;
+      opacity: 0;
+    }
+
+    a {
+      padding: 1rem;
+    }
+
+    &.active {
+      &::after {
+        height: 3px;
+        width: 100%;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes slideDownHeader {
+  0% {
+    top: calc($header-height * -1);
+  }
+
+  100% {
+    top: 0;
+  }
+}

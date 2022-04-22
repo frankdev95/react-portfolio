@@ -1,0 +1,21 @@
+@import "../../../sass/abstracts/variables";
+
+.skill {
+  &__outer {
+    background-color: white;
+    border-radius: 2px;
+    width: 100%;
+    height: 5px;
+    margin: 1.5rem 0;
+  }
+
+  &__inner {
+    background-color: $emeral;
+    height: 100%;
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../sass/abstracts/mixins";
+
+.section-heading {
+  position: relative;
+  &__secondary {
+    font-size: clamp(8rem, 10.4vw, 20rem);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 0;
+    transition: transform 0.4s ease-out;
+
+    @include media("screen", "<sm-desktop") {
+      display: none;
+    }
+  }
+}

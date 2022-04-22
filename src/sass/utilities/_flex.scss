@@ -1,0 +1,44 @@
+$flex-align: (
+  "start": "flex-start",
+  "end": "flex-end",
+  "center": "center",
+  "base": "baseline",
+  "stretch": "stretch",
+);
+$flex-justify: (
+  "start": "flex-start",
+  "end": "flex-end",
+  "center": "center",
+  "between": "space-between",
+  "around": "space-around",
+  "evenly": "space-evenly",
+);
+
+.u-flex {
+  display: flex;
+}
+
+@each $name, $property in $flex-align {
+  .u-align-#{$name} {
+    align-items: #{$property};
+  }
+}
+
+@each $name, $property in $flex-justify {
+  .u-justify-#{$name} {
+    justify-content: #{$property};
+  }
+}
+
+.u-flex-column {
+  flex-direction: column;
+}
+
+.u-flex-centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.u-flex-wrap {
+  flex-wrap: wrap;
+}
